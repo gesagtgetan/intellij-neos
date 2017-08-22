@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+<body>
+	<h1 id="intellijideaphpstormneosplugin">IntelliJ IDEA / PhpStorm Neos Plugin</h1>
+
+	<p><a href="https://travis-ci.org/cvette/intellij-neos"><img src="https://travis-ci.org/cvette/intellij-neos.svg?branch=master" alt="Build Status" /></a>
+	<a href="https://plugins.jetbrains.com/plugin/9362"><img src="https://christianvette.de/badge/9362/version" alt="Version" /></a>
+	<a href="https://plugins.jetbrains.com/plugin/9362"><img src="https://christianvette.de/badge/9362/downloads" alt="Downloads" /></a>
+	<a href="https://plugins.jetbrains.com/plugin/9362"><img src="https://christianvette.de/badge/9362/last-month" alt="Downloads last month" /></a>
+	<a href="https://gitter.im/intellij-neos/Lobby"><img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg" alt="Gitter" /></a></p>
+
+	<p>This is a <strong>work in progress</strong>. There may be performance and stability problems.</p>
+
+	<h2 id="features">Features</h2>
+
+	<ul>
+	<li>Fusion / TypoScript2 language support
+
+
+	<ul>
+	<li>Configurable syntax highlighting</li>
+
+	<li>Basic formatting</li>
+
+	<li>Brace matching</li>
+
+	<li>Breadcrumb navigation</li>
+
+	<li>Code folding</li>
+
+	<li>Structure view</li>
+
+	<li>EEL helper references (Ctrl+Click navigation to class/method)</li>
+
+	<li>Prototype references (Ctrl+Click navigation to prototype definition)</li></ul>
+	</li>
+
+	<li>Completion for node type definitions</li>
+
+	<li>"Go to definition" for node types / supertypes / constraints in NodeTypes.yaml</li>
+	</ul>
+
+	<h2 id="usage">Usage</h2>
+
+	<p>You can install the plugin by going to <code>Settings &gt; Plugins &gt; Browse repositories</code> and searching for "Neos".</p>
+
+	<h2 id="developing">Developing</h2>
+
+	<ul>
+	<li>Ensure you have Java 8 SDK <em>newer than</em> Java 8.112 (newer than what IntelliJ displays in "About IntelliJ IDEA" dialog)</li>
+
+	<li>clone the repository</li>
+
+	<li>run <code>./gradlew runIde</code> - for the first time, this will take quite a while, as it downloads IntelliJ.</li>
+
+	<li>First, go to "Configure -> Project Defaults -> Project Structure" (or "File -> Project Structure"),
+	then ensure underneath "Platform Settings" -> "SDKs", there is a SDK for the JDK 1.8 version you have. If not, create it.</li>
+
+	<li>to open the project in IntelliJ, Use "File -> Open" in IntelliJ and select the "build.gradle" in here.
+
+
+	<ul>
+	<li>then, select "Use Auto-Import"; and select JDK 1.8 (newer than rev 112).</li></ul>
+	</li>
+
+	<li>to run the project from within IDEA, go to "View -> Tool Windows -> Gradle", and in the Gradle tool window, do the following:
+
+
+	<ul>
+	<li>expand "Tasks -> intellij -> runIde"</li>
+
+	<li>right-click it and select "Run"</li>
+
+	<li>(you can also select "debug" to run it in debug mode!)</li></ul>
+	</li>
+
+	<li>in debug mode, you can hot-reload classes by choosing "Run -> Reload changed classes" as explained on https://www.jetbrains.com/help/idea/2016.3/reloading-classes.html</li>
+
+	<li>have fun developing :)</li>
+	</ul>
+
+	<h2 id="developmenttipsandtricks">Development Tips and Tricks</h2>
+
+	<ul>
+	<li>install GrammarKit if you want to work on the parser</li>
+
+	<li>to log, use <code>NeosProjectComponent.getLogger().warn("Foo")</code>
+	and run <code>tail -f build/idea-sandbox/system/log/idea.log</code>.</li>
+
+	<li>If you use debug level, you have to add the "Neos" debug category via Help > Debug Log Settings.</li>
+	</ul>
+
+	<h2 id="license">License</h2>
+
+	<p>Copyright (C) 2016  Christian Vette</p>
+
+	<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</p>
+
+	<p>You should have received a copy of the GNU General Public License along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+	
+	</body>
+
+</html>
